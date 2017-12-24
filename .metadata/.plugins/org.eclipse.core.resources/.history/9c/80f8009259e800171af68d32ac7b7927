@@ -1,0 +1,24 @@
+package Layer4;
+
+public class TCP {
+	
+	private int[] ver=new int[4];
+	private int[] headerLength=new int[4];
+	private int[] typeOfService=new int[8];
+	private int[] identification=new int[16];
+	private int[] timeToLive=new int[8];
+	private int[] protocol=new int[8];
+	private int[] totalLength=new int[16];
+	private int[] flags=new int[3];
+	private int[] offset=new int[13];
+	private int[] checkSum=new int[16];
+	private int[] sourceAddress=new int[32];
+	private int[] destinationAddress=new int[32];
+	private String option;
+	private String data;
+	private IP ip;
+	
+	public TCP()
+		
+	
+}

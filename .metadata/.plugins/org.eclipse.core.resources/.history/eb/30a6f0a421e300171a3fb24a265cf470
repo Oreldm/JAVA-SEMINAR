@@ -1,0 +1,10 @@
+package Layer2;
+
+public class EthernetFrame {
+	
+	private final String PREAMBLE="0101010101";
+	private String destAddr;
+	private String srcAddr;
+	private char[]Type=new char[2];
+
+}

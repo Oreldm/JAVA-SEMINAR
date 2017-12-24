@@ -1,0 +1,5 @@
+package NetworkException;
+
+public class FieldSizeNotRightException {
+
+}
