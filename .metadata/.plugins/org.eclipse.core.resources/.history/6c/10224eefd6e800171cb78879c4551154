@@ -21,7 +21,7 @@ public class IP {
 	private String option;
 	private String data;
 	EthernetFrame ethernet;
-
+	//comment
 	public IP(int[]ver,int[]headerLength, int[] typeOfService,
 			int[] identification, int[] timeToLive, int[] protocol,
 			int[] totalLength, int[] flags, int[] checkSum, int[] sourceAddress,
@@ -60,6 +60,4 @@ public class IP {
 	public EthernetFrame getEthernetFrame() {
 		return this.ethernet;
 	}
-	
-	//shuki
 }
