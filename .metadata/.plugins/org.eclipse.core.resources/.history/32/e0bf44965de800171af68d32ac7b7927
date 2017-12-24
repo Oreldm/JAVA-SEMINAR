@@ -1,0 +1,27 @@
+package Layer3;
+
+import Layer2.EthernetFrame;
+import Utils.Utils;
+
+public class CompressedIp {
+	
+	private int[] headerLength=new int[4];
+	private int[] identification=new int[16];
+	private int[] totalLength=new int[16];
+	private int[] offset=new int[13];
+	private int[] checkSum=new int[16];
+	private String data;
+	EthernetFrame ethernet;
+	
+	public CompressedIp(IP ip) {
+		
+		Utils.copyByValue(headerLength, this.headerLength);
+		Utils.copyByValue(identification, this.identification);
+		Utils.copyByValue(totalLength, this.totalLength);
+		Utils.copyByValue(offset, this.offset);
+		Utils.copyByValue(checkSum, this.checkSum);
+		this.data=data;
+		this.ethernet=ethernet;
+	}
+
+}

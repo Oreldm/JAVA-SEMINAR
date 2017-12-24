@@ -1,6 +1,5 @@
 package Decompressor;
 
-//File Name GreetingServer.java
 import java.net.*;
 import java.io.*;
 

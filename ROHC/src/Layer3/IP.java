@@ -42,9 +42,22 @@ public class IP {
 		this.option=option;
 		this.data=data;
 		this.ethernet=ethernet;
-		
-		
-		
 	}
 	
+	
+	public int[] getTotalLength() {
+		return this.totalLength;
+	}
+	
+	public int[] getCheckSum() {
+		return this.checkSum;
+	}
+	
+	public String getData() {
+		return this.data;
+	}
+	
+	public EthernetFrame getEthernetFrame() {
+		return this.ethernet;
+	}
 }

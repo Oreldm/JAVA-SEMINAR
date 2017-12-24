@@ -1,0 +1,17 @@
+package Compressor;
+
+import Layer3.IP;
+
+public class Modes {
+	IP lastIp;
+
+	public static String IP_Only(IP ip) {
+		if(lastIp==null || lastIp!=ip) {
+			return ip.toString();
+		}
+		
+		return null;
+		
+	}
+	
+}

@@ -1,0 +1,39 @@
+package Layer3;
+
+import Layer2.EthernetFrame;
+import Utils.Utils;
+
+public class CompressedIp {
+	
+	private int[] ver=new int[4];
+	private int[] headerLength=new int[4];
+	private int[] typeOfService=new int[8];
+	private int[] identification=new int[16];
+	private int[] timeToLive=new int[8];
+	private int[] protocol=new int[8];
+	private int[] totalLength=new int[16];
+	private int[] flags=new int[3];
+	private int[] offset=new int[13];
+	private int[] checkSum=new int[16];
+	private String option;
+	private String data;
+	EthernetFrame ethernet;
+	
+	public CompressedIp(IP ip) {
+		
+		Utils.copyByValue(ver, this.ver);
+		Utils.copyByValue(headerLength, this.headerLength);
+		Utils.copyByValue(typeOfService, this.typeOfService);
+		Utils.copyByValue(identification, this.identification);
+		Utils.copyByValue(timeToLive, this.timeToLive);
+		Utils.copyByValue(protocol, this.protocol);
+		Utils.copyByValue(totalLength, this.totalLength);
+		Utils.copyByValue(flags, this.flags);
+		Utils.copyByValue(offset, this.offset);
+		Utils.copyByValue(checkSum, this.checkSum);
+		this.option=option;
+		this.data=data;
+		this.ethernet=ethernet;
+	}
+
+}

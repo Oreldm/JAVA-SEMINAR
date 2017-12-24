@@ -1,6 +1,5 @@
 package Compressor;
 
-//File Name GreetingClient.java
 import java.net.*;
 import java.io.*;
 

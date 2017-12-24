@@ -1,0 +1,14 @@
+package Compressor;
+
+import Layer3.IP;
+
+public class Modes {
+
+	public static String IP_Only(IP ip) {
+		
+		
+		return null;
+		
+	}
+	
+}

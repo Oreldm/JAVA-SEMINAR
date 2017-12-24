@@ -1,0 +1,9 @@
+package Compressor;
+
+public class Modes {
+
+	public static String IP_Only(IP ip) {
+		
+	}
+	
+}
