@@ -6,3 +6,5 @@
 1514082748102	Rename type 'UdpFrame'
 1514084701986	Rename type 'IpPacket'
 1514084977633	Rename local variable 'a'
+1514087874547	Rename type 'Modes'
+1514087884086	Rename type 'ComprressOptions'
