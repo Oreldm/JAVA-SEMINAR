@@ -1,0 +1,12 @@
+package Layer4;
+
+public class UDP {
+	//SHOULD CHANGE
+	private char[] sourcePort=new char[16];
+	private char[] destPort=new char[16];
+	private char[] UdpLength=new char[16];
+	private char[] UdpChecksum=new char[16];
+	private String data;
+	
+		
+}

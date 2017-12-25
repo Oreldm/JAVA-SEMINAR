@@ -1,2 +1,4 @@
 
 .metadata/.plugins/org.eclipse.core.resources/1.snap
+/.metadata/
+/.recommenders/

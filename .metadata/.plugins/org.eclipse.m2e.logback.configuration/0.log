@@ -3,3 +3,93 @@
 2017-12-24 04:31:02,093 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2017-12-24 18:02:21,122 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2017-12-24 20:11:26,039 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-12-25 03:44:16,810 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-12-25 05:04:33,813 [Worker-11] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\h1z1\Desktop\JAVA SEMINAR\1\pom.xml
+2017-12-25 05:04:38,092 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: RohcProject:1:0.0.1-SNAPSHOT @ C:\Users\h1z1\Desktop\JAVA SEMINAR\1\pom.xml.
+2017-12-25 05:04:39,112 [Worker-11] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /1/src/main/java
+2017-12-25 05:04:39,121 [Worker-11] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /1/src/test/java
+2017-12-25 05:04:39,444 [Worker-11] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 5 sec
+2017-12-25 05:04:40,048 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:04:40,048 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\1\src\main\resources
+2017-12-25 05:04:40,051 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:04:40,051 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\1\src\test\resources
+2017-12-25 05:05:23,283 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\pom.xml
+2017-12-25 05:05:23,679 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: RohcProject:RohcProject:0.0.1-SNAPSHOT @ C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\pom.xml.
+2017-12-25 05:05:23,922 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/main/java
+2017-12-25 05:05:23,928 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/test/java
+2017-12-25 05:05:23,986 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-12-25 05:05:24,356 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:05:24,357 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:05:24,358 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:05:24,359 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:05:42,953 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:05:42,957 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:05:42,962 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:05:42,966 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:05:50,078 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2017-12-25 05:05:57,086 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2017-12-25 05:06:01,225 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject
+2017-12-25 05:06:01,230 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2017-12-25 05:06:13,612 [Worker-16] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject
+2017-12-25 05:06:13,616 [Worker-16] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-12-25 05:06:17,834 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:06:17,839 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:06:17,844 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:06:17,849 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:07:03,492 [Worker-11] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-12-25 05:07:03,905 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: RohcProject:RohcProject:0.0.1-SNAPSHOT @ C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\pom.xml.
+2017-12-25 05:07:04,171 [Worker-11] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/main/java
+2017-12-25 05:07:04,176 [Worker-11] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/test/java
+2017-12-25 05:07:04,259 [Worker-11] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-12-25 05:07:04,495 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:07:04,496 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:07:04,503 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:07:04,503 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:07:35,053 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:07:35,053 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:07:35,059 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:07:35,064 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:08:30,520 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:08:30,520 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:08:30,531 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:08:30,539 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:08:38,257 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-12-25 05:08:38,649 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: RohcProject:RohcProject:0.0.1-SNAPSHOT @ C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\pom.xml.
+2017-12-25 05:08:38,826 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/main/java
+2017-12-25 05:08:38,832 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RohcProject/src/test/java
+2017-12-25 05:08:38,934 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-12-25 05:08:39,138 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:08:39,142 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:08:39,144 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:08:39,149 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:08:52,519 [Worker-17] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject
+2017-12-25 05:08:52,523 [Worker-17] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean install
+2017-12-25 05:10:48,373 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:48,377 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:10:48,383 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:48,388 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:10:49,408 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:49,408 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:10:49,409 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:49,414 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:10:57,317 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject
+2017-12-25 05:10:57,321 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-12-25 05:10:59,375 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:59,383 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:10:59,391 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:10:59,399 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:26:44,516 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:26:44,516 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:26:44,521 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:26:44,525 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:37:41,882 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-12-25 05:37:44,210 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:37:44,211 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:37:44,215 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:37:44,216 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 05:37:55,282 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject
+2017-12-25 05:37:55,283 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-12-25 05:38:09,712 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:38:09,712 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 05:38:09,713 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 05:38:09,713 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
