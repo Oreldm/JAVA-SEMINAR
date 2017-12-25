@@ -161,3 +161,27 @@
 2017-12-25 06:14:39,399 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
 2017-12-25 06:14:39,405 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-12-25 06:14:39,411 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:16:42,061 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:16:42,061 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:16:42,066 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:16:42,070 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:25:07,589 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:25:07,589 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:25:07,600 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:25:07,608 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:25:37,508 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:25:37,512 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:25:37,518 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:25:37,522 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:28:01,199 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:28:01,206 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:28:01,212 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:28:01,217 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:28:22,908 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:28:22,912 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:28:22,917 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:28:22,923 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources
+2017-12-25 06:31:09,144 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:31:09,144 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\main\resources
+2017-12-25 06:31:09,154 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-12-25 06:31:09,158 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h1z1\Desktop\JAVA SEMINAR\RohcProject\src\test\resources

@@ -5,6 +5,8 @@ public class test {
 
 		IP ip= new IP(1, 2, 3, 4, 5, 6, 7, 4, 4, 7, 8, 2, "a", "asdsadsadsa", null);
 		System.out.println(ip.toString());
+		CompressedIp a= new CompressedIp(ip);
+		System.out.println(a);
 		
 	}
 }

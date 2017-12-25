@@ -36,7 +36,7 @@ public class Server extends Thread {
 	}
 
 	public static void main(String[] args) {
-		int port = Integer.parseInt(args[0]);
+		int port = 6000;
 		try {
 			Thread t = new Server(port);
 			t.start();
