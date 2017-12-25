@@ -60,6 +60,12 @@ public class IP {
 	public EthernetFrame getEthernetFrame() {
 		return this.ethernet;
 	}
+
+	@Override
+	public String toString(){
+		
+		return null;
+		
+	}
 	
-	//shuki
 }
