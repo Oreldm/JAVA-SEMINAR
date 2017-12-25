@@ -36,7 +36,7 @@ public class IP {
 
 	public IP(int ver,int headerLength, int typeOfService,
 			int identification, int timeToLive, int protocol,
-			int totalLength, int flags, int checkSum, int sourceAddress,
+			int totalLength,int offset, int flags, int checkSum, int sourceAddress,
 			int destinationAddress,String option, String data, EthernetFrame ethernet) {
 		this.ver=ver;
 		this.headerLength=headerLength;
@@ -44,6 +44,7 @@ public class IP {
 		this.identification=identification;
 		this.timeToLive=timeToLive;
 		this.protocol=protocol;
+		this.offset=offset;
 		this.totalLength=totalLength;
 		this.flags=flags;
 		this.checkSum=checkSum;
@@ -71,6 +72,7 @@ public class IP {
 		return this.ethernet;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public String toString() {
 
@@ -80,6 +82,7 @@ public class IP {
 		json.put("headerLength", headerLength);
 		json.put("typeOfService", typeOfService);
 		json.put("identification", identification);
+		json.put("offset", offset);
 		json.put("timeToLive", timeToLive);
 		json.put("protocol", protocol);
 		json.put("totalLength", totalLength);
