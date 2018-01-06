@@ -56,6 +56,128 @@ public class IP {
 	}
 	
 	
+	public int getVer() {
+		return ver;
+	}
+
+
+	public void setVer(int ver) {
+		this.ver = ver;
+	}
+
+
+	public int getHeaderLength() {
+		return headerLength;
+	}
+
+
+	public void setHeaderLength(int headerLength) {
+		this.headerLength = headerLength;
+	}
+
+
+	public int getTypeOfService() {
+		return typeOfService;
+	}
+
+
+	public void setTypeOfService(int typeOfService) {
+		this.typeOfService = typeOfService;
+	}
+
+
+	public int getIdentification() {
+		return identification;
+	}
+
+
+	public void setIdentification(int identification) {
+		this.identification = identification;
+	}
+
+
+	public int getTimeToLive() {
+		return timeToLive;
+	}
+
+
+	public void setTimeToLive(int timeToLive) {
+		this.timeToLive = timeToLive;
+	}
+
+
+	public int getProtocol() {
+		return protocol;
+	}
+
+
+	public void setProtocol(int protocol) {
+		this.protocol = protocol;
+	}
+
+	public int getFlags() {
+		return flags;
+	}
+
+
+	public void setFlags(int flags) {
+		this.flags = flags;
+	}
+
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+	public int getSourceAddress() {
+		return sourceAddress;
+	}
+
+	public void setSourceAddress(int sourceAddress) {
+		this.sourceAddress = sourceAddress;
+	}
+
+	public int getDestinationAddress() {
+		return destinationAddress;
+	}
+
+	public void setDestinationAddress(int destinationAddress) {
+		this.destinationAddress = destinationAddress;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
+	}
+
+	public EthernetFrame getEthernet() {
+		return ethernet;
+	}
+
+	public void setEthernet(EthernetFrame ethernet) {
+		this.ethernet = ethernet;
+	}
+
+
+	public void setTotalLength(int totalLength) {
+		this.totalLength = totalLength;
+	}
+
+
+	public void setCheckSum(int checkSum) {
+		this.checkSum = checkSum;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+	
 	public int getTotalLength() {
 		return this.totalLength;
 	}
@@ -68,8 +190,36 @@ public class IP {
 		return this.data;
 	}
 	
-	public EthernetFrame getEthernetFrame() {
-		return this.ethernet;
+	@Override
+    public boolean equals(Object o) {
+		if(o==null)
+			return false;
+		IP ip = (IP)o;
+		
+//		private int ver;
+//		private int headerLength;
+//		private int typeOfService;
+//		private int identification;
+//		private int timeToLive;
+//		private int protocol;
+//		private int totalLength;
+//		private int flags;
+//		private int offset;
+//		private int checkSum;
+//		private int sourceAddress;
+//		private int destinationAddress;
+//		private String option;
+//		private String data;
+//		EthernetFrame ethernet;
+		/**TODO: Make it more accurate and return the exact thing that is missing**/
+		return (this.ver==ip.getVer() && this.getDestinationAddress()==ip.getDestinationAddress() && this.getSourceAddress() == ip.getSourceAddress() &&
+				this.getProtocol()== ip.getProtocol());
+	}
+	
+	public IP getDifferences(IP other) {
+		
+		
+		return other;
 	}
 	
 	@SuppressWarnings("unchecked")

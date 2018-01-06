@@ -7,6 +7,8 @@ import Utils.Utils;
 
 public class CompressedIp {
 	
+	public static IP lastPacket=null;
+	
 	private int totalLength;
 	private int checkSum;
 	private String data;
@@ -16,7 +18,7 @@ public class CompressedIp {
 		this.totalLength=ip.getTotalLength();
 		this.checkSum=ip.getCheckSum();
 		this.data=ip.getData();
-		this.ethernet=ip.getEthernetFrame();
+		this.ethernet=ip.getEthernet();
 	}
 	
 	
