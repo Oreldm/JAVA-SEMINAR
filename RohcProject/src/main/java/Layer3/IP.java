@@ -30,14 +30,14 @@ public class IP {
 	private int checkSum;
 	private int sourceAddress;
 	private int destinationAddress;
-	private String option;
+	private int option;
 	private String data;
 	EthernetFrame ethernet;
 
 	public IP(int ver,int headerLength, int typeOfService,
 			int identification, int timeToLive, int protocol,
 			int totalLength,int offset, int flags, int checkSum, int sourceAddress,
-			int destinationAddress,String option, String data, EthernetFrame ethernet) {
+			int destinationAddress,int option, String data, EthernetFrame ethernet) {
 		this.ver=ver;
 		this.headerLength=headerLength;
 		this.typeOfService=typeOfService;
@@ -53,6 +53,24 @@ public class IP {
 		this.option=option;
 		this.data=data;
 		this.ethernet=ethernet;
+	}
+	
+	
+	public IP(JSONObject json) {
+		this.setVer(((Long) json.get("ver")).intValue());
+		this.setHeaderLength(((Long) json.get("headerLength")).intValue());
+		this.setTypeOfService(((Long) json.get("typeOfService")).intValue());
+		this.setIdentification(((Long) json.get("identification")).intValue());
+		this.setOffset(((Long) json.get("offset")).intValue());
+		this.setTimeToLive(((Long) json.get("timeToLive")).intValue());
+		this.setProtocol(((Long) json.get("protocol")).intValue());
+		this.setTotalLength(((Long) json.get("totalLength")).intValue());
+		this.setFlags(((Long) json.get("flags")).intValue());
+		this.setCheckSum(((Long) json.get("checkSum")).intValue());
+		this.setSourceAddress(((Long) json.get("sourceAddress")).intValue());
+		this.setDestinationAddress(((Long) json.get("destinationAddress")).intValue());
+		this.setOption(((Long) json.get("option")).intValue());
+		this.setData((String) json.get("data"));
 	}
 	
 	
@@ -148,11 +166,11 @@ public class IP {
 		this.destinationAddress = destinationAddress;
 	}
 
-	public String getOption() {
+	public int getOption() {
 		return option;
 	}
 
-	public void setOption(String option) {
+	public void setOption(int option) {
 		this.option = option;
 	}
 
@@ -217,9 +235,41 @@ public class IP {
 	}
 	
 	public IP getDifferences(IP other) {
+//		private int ver;
+//		private int headerLength;
+//		private int typeOfService;
+//		private int identification;
+//		private int timeToLive;
+//		private int protocol;
+//		private int totalLength;
+//		private int flags;
+//		private int offset;
+//		private int checkSum;
+//		private int sourceAddress;
+//		private int destinationAddress;
+//		private String option;
+//		private String data;
+//		EthernetFrame ethernet;
+		if(other==null)
+			return null;
 		
 		
-		return other;
+		IP ipToReturn = Utils.getIpObject();
+		//XOR the difference
+		ipToReturn.setVer(this.ver^other.ver);
+		ipToReturn.headerLength=0;
+		ipToReturn.setTypeOfService(this.typeOfService^other.typeOfService);
+		ipToReturn.setIdentification(this.identification^other.identification);
+		ipToReturn.setTimeToLive(this.timeToLive^other.timeToLive);
+		ipToReturn.setProtocol(this.protocol^other.protocol);
+		ipToReturn.setOffset(0);
+		ipToReturn.totalLength=0;
+		ipToReturn.setFlags(this.flags^other.flags);
+		ipToReturn.setSourceAddress(this.sourceAddress^other.sourceAddress);
+		ipToReturn.setDestinationAddress(this.destinationAddress^other.destinationAddress);
+		ipToReturn.setOption(this.destinationAddress^other.option);
+		
+		return ipToReturn;
 	}
 	
 	@SuppressWarnings("unchecked")

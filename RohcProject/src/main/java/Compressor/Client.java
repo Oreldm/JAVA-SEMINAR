@@ -13,26 +13,44 @@ public class Client {
 		String serverName = "localhost";
 		int port = 6000;
 		try {
-			System.out.println("Connecting to " + serverName + " on port " + port);
+			// System.out.println("Connecting to " + serverName + " on port " + port);
 			Socket client = new Socket(serverName, port);
 
-			System.out.println("Just connected to " + client.getRemoteSocketAddress());
-//			OutputStream outToServer = client.getOutputStream();
+			// System.out.println("Just connected to " + client.getRemoteSocketAddress());
+			// OutputStream outToServer = client.getOutputStream();
+
+			IP ip = new IP(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, "asdsadsadsa", null);
+			CompressorAlgorithm compressor= new CompressorAlgorithm();
+			IP a = compressor.compress(ip);
+		
 			
-			IP ip= new IP(1, 2, 3, 4, 5, 6, 7, 4, 4, 7, 8, 2, "a", "asdsadsadsa", null);
-			CompressedIp a= new CompressedIp(ip);
+			/** Send Stream **/
 			OutputStream outToServer = client.getOutputStream();
 			DataOutputStream out = new DataOutputStream(outToServer);
+			out.writeUTF(a.toString()); // Actual Place to put string
+			
+			
+			//second
+			IP x = new IP(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, "asdsadsadsa", null);
+			IP y = compressor.compress(x);
+			
+			System.out.println("Here is Y " + y.toString());
+		
+			
+			/** Send Stream **/
+			outToServer = client.getOutputStream();
+			out = new DataOutputStream(outToServer);
+			out.writeUTF(y.toString()); // Actual Place to put string
+			
+			
 
-			out.writeUTF(a.toString());
-			InputStream inFromServer = client.getInputStream();
-			DataInputStream in = new DataInputStream(inFromServer);
-
-			System.out.println("Server says " + in.readUTF());
+			/** Recieve from Server **/
+			// InputStream inFromServer = client.getInputStream();
+			// DataInputStream in = new DataInputStream(inFromServer);
+			// System.out.println("Server says " + in.readUTF());
 			client.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		/////sadfdsaf
-	} 
+	}
 }

@@ -4,7 +4,7 @@ import Layer3.IP;
 
 public class Utils {
 	public static IP getIpObject() {
-		IP ip= new IP(1, 2, 3, 4, 5, 6, 7, 4, 4, 7, 8, 2, "a", "asdsadsadsa", null);
+		IP ip= new IP(1, 2, 3, 4, 5, 6, 7, 4, 4, 7, 8, 2, 3, "asdsadsadsa", null);
 		return ip;
 	}
 	

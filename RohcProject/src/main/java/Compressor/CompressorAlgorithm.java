@@ -7,19 +7,21 @@ public class CompressorAlgorithm {
 	public static IP lastPacket = null;
 	
 	
-	public String compress(IP ip) {
+	public IP compress(IP ip) {
 		if(ip.equals(lastPacket) == false) {
-			return ip.toString(); //IR State
+			lastPacket=ip;
+			return ip; //IR State
 		}
 		//IF RTP/SomethingDynamic Do Second Order (means to add sequence number!)
 		/**TODO: ADD SecondOrder**/
 		
+		
 		//else:
 		/**First Order**/
-		
-		
-		
-		return null;
+		 IP packetToReturn=lastPacket.getDifferences(ip);
+		 packetToReturn.setData(ip.getData());
+		 lastPacket=ip;
+		 return packetToReturn;
 	}
 	
 }
