@@ -7,11 +7,7 @@ import javax.swing.border.TitledBorder;
 
 import Compressor.CompressorGui;
 public class DecompressorGui extends JFrame { 
-	
-  private JTextField ipAdress = new JTextField();
-  private JTextField data = new JTextField();
-  
-  
+	  
   public DecompressorGui() {
 	JPanel p1 = new JPanel(new GridLayout(14, 2));
     p1.add(new JLabel("identification: "));
