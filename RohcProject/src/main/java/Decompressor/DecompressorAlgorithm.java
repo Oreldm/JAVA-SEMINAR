@@ -10,11 +10,10 @@ public class DecompressorAlgorithm {
 			lastPacket=ip;
 			return ip;
 		}
-		
 		/**First Order**/
 		IP packetToReturn=lastPacket.getDifferences(ip);
 		packetToReturn.setData(ip.getData());
-		lastPacket=ip;
+		lastPacket=packetToReturn;
 		return packetToReturn;
 	}
 
