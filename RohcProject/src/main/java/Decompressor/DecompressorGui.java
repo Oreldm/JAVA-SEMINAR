@@ -12,6 +12,7 @@ import Compressor.CompressorGui;
 public class DecompressorGui extends JFrame {
 
 	public DecompressorGui() {
+		//check
 		JPanel p1 = new JPanel(new GridLayout(14, 2));
 		p1.add(new JLabel("identification: "));
 		p1.add(new JLabel(""));// enter identification!
