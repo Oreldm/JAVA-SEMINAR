@@ -8,7 +8,7 @@ public class CompressorAlgorithm {
 	
 	
 	public IP compress(IP ip) {
-		if(ip.equals(lastPacket) == false) {
+		if(lastPacket == null) {
 			lastPacket=ip;
 			return ip; //IR State
 		}

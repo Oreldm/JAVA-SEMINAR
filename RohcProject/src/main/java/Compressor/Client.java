@@ -31,7 +31,7 @@ public class Client {
 			
 			
 			//second
-			IP x = new IP(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, "asdsadsadsa", null);
+			IP x = new IP(100, 200, 300, 400, 500, 600, 700, 800, 900, 100, 110, 120, 130 , "asdsadsadsa", null);
 			IP y = compressor.compress(x);
 			
 			System.out.println("Here is Y " + y.toString());

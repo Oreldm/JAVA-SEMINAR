@@ -17,7 +17,7 @@ public class Server extends Thread {
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
-		serverSocket.setSoTimeout(10000);
+//		serverSocket.setSoTimeout(10000);
 	}
 
 	public void run() {
