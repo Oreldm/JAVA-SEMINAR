@@ -2,6 +2,9 @@ package Layer3;
 
 import Layer2.EthernetFrame;
 import Utils.Utils;
+
+import java.io.UnsupportedEncodingException;
+
 import org.json.simple.JSONObject;
 public class IP {
 
@@ -97,6 +100,7 @@ public class IP {
 	public int getTypeOfService() {
 		return typeOfService;
 	}
+
 
 	public void setTypeOfService(int typeOfService) {
 		this.typeOfService = typeOfService;
@@ -256,20 +260,56 @@ public class IP {
 		IP ipToReturn = Utils.getIpObject();
 		//XOR the difference
 		ipToReturn.setVer(this.ver^other.ver);
+		ipToReturn.headerLength=0;
 		ipToReturn.setTypeOfService(this.typeOfService^other.typeOfService);
 		ipToReturn.setIdentification(this.identification^other.identification);
 		ipToReturn.setTimeToLive(this.timeToLive^other.timeToLive);
 		ipToReturn.setProtocol(this.protocol^other.protocol);
+		ipToReturn.setOffset(0);
+		ipToReturn.totalLength=0;
 		ipToReturn.setFlags(this.flags^other.flags);
 		ipToReturn.setSourceAddress(this.sourceAddress^other.sourceAddress);
 		ipToReturn.setDestinationAddress(this.destinationAddress^other.destinationAddress);
 		ipToReturn.setOption(this.option^other.option);
 		ipToReturn.setCheckSum(this.checkSum^other.checkSum);
-		ipToReturn.setOffset(0);
-		ipToReturn.totalLength=0;
-		ipToReturn.headerLength=0;
 		
 		return ipToReturn;
+	}
+	
+	public int numOfBitsHeaderLength(IP ip){
+		int totalNumOfBits = 0;
+		
+		totalNumOfBits += numOfBits(ip.getVer());
+		totalNumOfBits += numOfBits(ip.getTypeOfService());
+		totalNumOfBits += numOfBits(ip.getIdentification());
+		totalNumOfBits += numOfBits(ip.getTimeToLive());
+		totalNumOfBits += numOfBits(ip.getProtocol());
+		totalNumOfBits += numOfBits(ip.getFlags());
+		totalNumOfBits += numOfBits(ip.getSourceAddress());
+		totalNumOfBits += numOfBits(ip.getDestinationAddress());
+		totalNumOfBits += numOfBits(ip.getOption());
+		totalNumOfBits += numOfBits(ip.getCheckSum());
+		
+		return totalNumOfBits;
+	}
+	
+	public int numOfBitsTotalLength(IP ip) throws UnsupportedEncodingException{
+		int totalNumOfBits = 0;
+		totalNumOfBits += numOfBitsHeaderLength(ip);
+		
+		byte[] byteArray = ip.getData().getBytes("UTF-16BE");
+		totalNumOfBits += byteArray.length * 8; 
+		
+		return totalNumOfBits;
+	}
+	
+	public int numOfBits(int value){
+		int count = 0;
+		while(value > 0){
+			count++;
+			value = value >> 1;
+		}
+		return count;
 	}
 	
 	@SuppressWarnings("unchecked")
