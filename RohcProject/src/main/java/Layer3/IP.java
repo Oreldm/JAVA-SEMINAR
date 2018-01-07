@@ -267,7 +267,8 @@ public class IP {
 		ipToReturn.setFlags(this.flags^other.flags);
 		ipToReturn.setSourceAddress(this.sourceAddress^other.sourceAddress);
 		ipToReturn.setDestinationAddress(this.destinationAddress^other.destinationAddress);
-		ipToReturn.setOption(this.destinationAddress^other.option);
+		ipToReturn.setOption(this.option^other.option);
+		ipToReturn.setCheckSum(this.checkSum^other.checkSum);
 		
 		return ipToReturn;
 	}
