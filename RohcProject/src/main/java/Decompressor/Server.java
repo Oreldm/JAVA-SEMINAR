@@ -70,13 +70,13 @@ public class Server extends Thread {
 		}
 	}
 
-//	public static void main(String[] args) {
-//		int port = 6000;
-//		try {
-//			Thread t = new Server(port);
-//			t.start();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public static void main(String[] args) {
+		int port = 6000;
+		try {
+			Thread t = new Server(port);
+			t.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
