@@ -257,18 +257,18 @@ public class IP {
 		IP ipToReturn = Utils.getIpObject();
 		//XOR the difference
 		ipToReturn.setVer(this.ver^other.ver);
-		ipToReturn.headerLength=0;
 		ipToReturn.setTypeOfService(this.typeOfService^other.typeOfService);
 		ipToReturn.setIdentification(this.identification^other.identification);
 		ipToReturn.setTimeToLive(this.timeToLive^other.timeToLive);
 		ipToReturn.setProtocol(this.protocol^other.protocol);
-		ipToReturn.setOffset(0);
-		ipToReturn.totalLength=0;
 		ipToReturn.setFlags(this.flags^other.flags);
 		ipToReturn.setSourceAddress(this.sourceAddress^other.sourceAddress);
 		ipToReturn.setDestinationAddress(this.destinationAddress^other.destinationAddress);
 		ipToReturn.setOption(this.option^other.option);
 		ipToReturn.setCheckSum(this.checkSum^other.checkSum);
+		ipToReturn.setOffset(0);
+		ipToReturn.totalLength=0;
+		ipToReturn.headerLength=0;
 		
 		return ipToReturn;
 	}
