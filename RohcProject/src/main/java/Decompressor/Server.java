@@ -12,6 +12,8 @@ import java.io.*;
 
 public class Server extends Thread {
 	private ServerSocket serverSocket;
+	public static IP compressedIP;
+	public static IP decompreessedIP;
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
@@ -32,12 +34,12 @@ public class Server extends Thread {
 				String response = in.readUTF();
 				
 				JSONObject json = (JSONObject) parser.parse(response);
-				IP compressedIP= new IP(json);
+				compressedIP= new IP(json);
 				System.out.println("WE GOT FROM CLIENT COMPRESSED : " +compressedIP.toString());
 				DecompressorAlgorithm decompressor= new DecompressorAlgorithm();
-				IP decompreessedIP=decompressor.decompress(compressedIP);
+				decompreessedIP=decompressor.decompress(compressedIP);
 				System.out.println("Decompressed: " + decompreessedIP);
-				
+				/**FOR RAVID : HERE WE SHOULD HAVE updateGui()**/
 				
 				//second
 				System.out.println("Second");
@@ -68,13 +70,13 @@ public class Server extends Thread {
 		}
 	}
 
-	public static void main(String[] args) {
-		int port = 6000;
-		try {
-			Thread t = new Server(port);
-			t.start();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		int port = 6000;
+//		try {
+//			Thread t = new Server(port);
+//			t.start();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }
