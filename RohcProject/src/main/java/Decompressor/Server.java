@@ -17,11 +17,10 @@ public class Server extends Thread {
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
-<<<<<<< HEAD
+
 //		serverSocket.setSoTimeout(10000);
-=======
-	//	serverSocket.setSoTimeout(100000);
->>>>>>> 3a55fe2abf1befaa5a559bb4fff6d57792a154bf
+
+
 	}
 
 	public void run() {
