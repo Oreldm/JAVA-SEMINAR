@@ -1,16 +1,22 @@
 package Decompressor;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-import Compressor.CompressorGui;
 import Layer3.IP;
 
 public class DecompressorGui extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static DecompressorGui frame = new DecompressorGui();
+	JPanel p1 = new JPanel(new GridLayout(14, 2));
+	JPanel p2 = new JPanel(new GridLayout(14, 2));
+	JPanel p3 = new JPanel(new GridLayout(1, 4));
 	
 	private String beforeVer;
 	private String beforeHeaderLength;
@@ -42,10 +48,12 @@ public class DecompressorGui extends JFrame {
 	private String afterOption;
 	private String afterData;
 	
+	JLabel versionP1 = new JLabel("Ver: ");
+	
+	
 	public DecompressorGui() {
 		//check
-		JPanel p1 = new JPanel(new GridLayout(14, 2));
-		p1.add(new JLabel("Ver: "));
+		p1.add(versionP1);
 		p1.add(new JLabel(beforeVer));
 		p1.add(new JLabel("Header Length: "));
 		p1.add(new JLabel(beforeHeaderLength));
@@ -75,7 +83,6 @@ public class DecompressorGui extends JFrame {
 		p1.add(new JLabel(beforeData));
 		p1.setBorder(new TitledBorder("Before Decompressing"));
 
-		JPanel p2 = new JPanel(new GridLayout(14, 2));
 		p2.add(new JLabel("Ver: "));
 		p2.add(new JLabel(afterVer));
 		p2.add(new JLabel("Header Length: "));
@@ -106,7 +113,6 @@ public class DecompressorGui extends JFrame {
 		p2.add(new JLabel(afterData));
 		p2.setBorder(new TitledBorder("After Decompressing"));
 
-		JPanel p3 = new JPanel(new GridLayout(1, 4));
 		p3.add(new JLabel("Number of packets: "));
 		p3.add(new JLabel());
 		p3.add(new JLabel("Data saved:"));
@@ -118,7 +124,6 @@ public class DecompressorGui extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		DecompressorGui frame = new DecompressorGui();
 		frame.pack();
 		frame.setTitle("Decompressor");
 		frame.setSize(500, 400);
@@ -138,7 +143,7 @@ public class DecompressorGui extends JFrame {
 		
 	}
 	public void updateGui(IP beforeIp, IP afterIp){
-		
+		versionP1.setText("Ver: "+beforeIp.getVer());
 		beforeVer = String.valueOf(beforeIp.getVer());
 		beforeHeaderLength = String.valueOf(beforeIp.getHeaderLength());
 		beforeTypeOfService = String.valueOf(beforeIp.getTypeOfService());
@@ -169,6 +174,9 @@ public class DecompressorGui extends JFrame {
 		afterOption = String.valueOf(afterIp.getOption());
 		afterData = String.valueOf(afterIp.getData());
 		
-		repaint();
+		p1.repaint();
+		p2.repaint();
+		p3.repaint();
+		this.repaint();
 	}
 }

@@ -98,7 +98,6 @@ public class IP {
 		return typeOfService;
 	}
 
-
 	public void setTypeOfService(int typeOfService) {
 		this.typeOfService = typeOfService;
 	}

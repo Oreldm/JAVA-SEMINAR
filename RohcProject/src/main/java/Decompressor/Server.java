@@ -18,8 +18,7 @@ public class Server extends Thread {
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
 
-//		serverSocket.setSoTimeout(10000);
-
+		// serverSocket.setSoTimeout(10000);
 
 	}
 
@@ -27,37 +26,39 @@ public class Server extends Thread {
 		while (true) {
 			try {
 				JSONParser parser = new JSONParser();
-//				System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "...");
+				// System.out.println("Waiting for client on port " +
+				// serverSocket.getLocalPort() + "...");
 				Socket server = serverSocket.accept();
 
-//				System.out.println("Just connected to " + server.getRemoteSocketAddress());
-				
-				/** Server Recieve**/
-				DataInputStream in = new DataInputStream(server.getInputStream()); //stream in
+				// System.out.println("Just connected to " + server.getRemoteSocketAddress());
+
+				/** Server Recieve **/
+				DataInputStream in = new DataInputStream(server.getInputStream()); // stream in
 				String response = in.readUTF();
-				
+
 				JSONObject json = (JSONObject) parser.parse(response);
-				compressedIP= new IP(json);
-				System.out.println("WE GOT FROM CLIENT COMPRESSED : " +compressedIP.toString());
-				DecompressorAlgorithm decompressor= new DecompressorAlgorithm();
-				decompreessedIP=decompressor.decompress(compressedIP);
+				compressedIP = new IP(json);
+				System.out.println("WE GOT FROM CLIENT COMPRESSED : " + compressedIP.toString());
+				DecompressorAlgorithm decompressor = new DecompressorAlgorithm();
+				decompreessedIP = decompressor.decompress(compressedIP);
 				System.out.println("Decompressed: " + decompreessedIP);
-				/**FOR RAVID : HERE WE SHOULD HAVE updateGui()**/
-			
-				//second
-				System.out.println("Second");
-				response = in.readUTF();
-				json = (JSONObject) parser.parse(response);
-				compressedIP= new IP(json);
-				System.out.println("WE GOT FROM CLIENT COMPRESSED : " +compressedIP.toString());
-				decompreessedIP=decompressor.decompress(compressedIP);
-				System.out.println("Decompressed: " + decompreessedIP);
-				
-				/** Server Answer**/
-//				DataOutputStream out = new DataOutputStream(server.getOutputStream());
-//				out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress() + "\nGoodbye!");
-			
-				
+				/** FOR RAVID : HERE WE SHOULD HAVE updateGui() **/
+				DecompressorGui.frame.updateGui(compressedIP, decompreessedIP);
+				DecompressorGui.frame.repaint();
+				//				// second
+//				System.out.println("Second");
+//				response = in.readUTF();
+//				json = (JSONObject) parser.parse(response);
+//				compressedIP = new IP(json);
+//				System.out.println("WE GOT FROM CLIENT COMPRESSED : " + compressedIP.toString());
+//				decompreessedIP = decompressor.decompress(compressedIP);
+//				System.out.println("Decompressed: " + decompreessedIP);
+
+				/** Server Answer **/
+				// DataOutputStream out = new DataOutputStream(server.getOutputStream());
+				// out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
+				// + "\nGoodbye!");
+
 				server.close();
 
 			} catch (SocketTimeoutException s) {
