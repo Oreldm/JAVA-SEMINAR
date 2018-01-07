@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 import Layer3.IP;
+import Layer4.TCP;
+import Layer4.UDP;
 
 public class DecompressorGui extends JFrame {
 	/**
@@ -52,6 +54,7 @@ public class DecompressorGui extends JFrame {
 	
 	public DecompressorGui() {
 		//check
+		
 		p1.add(versionP1);
 		p1.add(headerLengthP1);
 		p1.add(typeOfServiceP1);
@@ -113,6 +116,62 @@ public class DecompressorGui extends JFrame {
 		
 		
 	}
+	
+	public void updateGui(UDP beforeUDP, UDP afterUDP){
+		versionP1			.setText("Source Port: "+beforeUDP.getSourcePort());
+		headerLengthP1		.setText("Destination Port: " + beforeUDP.getDestPort());
+		typeOfServiceP1		.setText("Lenght: " + beforeUDP.getUdpLength());
+		identificationP1	.setText("CheckSum: " + beforeUDP.getUdpChecksum());
+		identificationP1	.setText("Data Received: " + beforeUDP.getData());
+		
+		versionP2			.setText("Source Port: "+afterUDP.getSourcePort());
+		headerLengthP2		.setText("Destination Port: " + afterUDP.getDestPort());
+		typeOfServiceP2		.setText("Lenght: " + afterUDP.getUdpLength());
+		identificationP2	.setText("CheckSum: " + afterUDP.getUdpChecksum());
+		identificationP2	.setText("Data Received: " + afterUDP.getData());
+		
+		
+		p1.repaint();
+		p2.repaint();
+		p3.repaint();
+		this.repaint();
+	}
+	
+	public void updateGui(TCP beforeTCP, TCP afterTCP){
+		versionP1			.setText("Source Port: "+beforeTCP.getSourcePort());
+		headerLengthP1		.setText("Destination Port: " + beforeTCP.getDestinationPort());
+		typeOfServiceP1		.setText("Sequence Number: " + beforeTCP.getSequenceNumber());
+		identificationP1	.setText("Acknowledge number: " + beforeTCP.getAckNumber());
+		timeToLiveP1		.setText("Data Offset: " + beforeTCP.getDataOffset());
+		protocolP1			.setText("Reserved: " + beforeTCP.getReserved());
+		totalLengthP1		.setText("Flags: " + beforeTCP.getFlags());
+		flagsP1				.setText("Window: " + beforeTCP.getWindow());
+		checkSumP1			.setText("CheckSum: " + beforeTCP.getCheckSum());
+		sourceAddressP1		.setText("Urgent Pointer: " + beforeTCP.getUrgentPointer());
+		destinationAddressP1.setText("Options: " + beforeTCP.getOptions());
+		optionP1			.setText("Padding: " + beforeTCP.getPadding());
+		dataP1				.setText("Data Received: " + beforeTCP.getData());
+		
+		versionP2			.setText("Source Port: "+afterTCP.getSourcePort());
+		headerLengthP2		.setText("Destination Port: " + afterTCP.getDestinationPort());
+		typeOfServiceP2		.setText("Sequence Number: " + afterTCP.getSequenceNumber());
+		identificationP2	.setText("Acknowledge number: " + afterTCP.getAckNumber());
+		timeToLiveP2		.setText("Data Offset: " + afterTCP.getDataOffset());
+		protocolP2			.setText("Reserved: " + afterTCP.getReserved());
+		totalLengthP2		.setText("Flags: " + afterTCP.getFlags());
+		flagsP2				.setText("Window: " + afterTCP.getWindow());
+		checkSumP2			.setText("CheckSum: " + afterTCP.getCheckSum());
+		sourceAddressP2		.setText("Urgent Pointer: " + afterTCP.getUrgentPointer());
+		destinationAddressP2.setText("Options: " + afterTCP.getOptions());
+		optionP2			.setText("Padding: " + afterTCP.getPadding());
+		dataP2				.setText("Data Received: " + afterTCP.getData());
+		
+		p1.repaint();
+		p2.repaint();
+		p3.repaint();
+		this.repaint();
+	}
+	
 	public void updateGui(IP beforeIp, IP afterIp){
 		versionP1			.setText("Ver: "+beforeIp.getVer());
 		headerLengthP1		.setText("Header Length: " + beforeIp.getHeaderLength());

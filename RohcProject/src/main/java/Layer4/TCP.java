@@ -22,121 +22,219 @@ public class TCP {
 	private String data;
 	private IP ip;*/
 	
-	private int ver;
-	private int headerLength;
-	private int typeOfService;
-	private int identification;
-	private int timeToLive;
-	private int protocol;
-	private int totalLength;
+	private int sourcePort;
+	private int destinationPort;
+	private int sequenceNumber;
+	private int ackNumber;
+	private int dataOffset;
+	private int reserved;
 	private int flags;
-	private int offset;
+	private int window;
 	private int checkSum;
-	private int sourceAddress;
-	private int destinationAddress;
-	private String option;
+	private int urgentPointer;
+	private int options;
+	private int padding;
 	private String data;
 	private IP ip;
 	
-	public TCP(int ver, int headerLength , int typeOfService, int identification,
-			 int timeToLive, int protocol, int totalLength,  int flags, int offset,
-			 int checkSum, int sourceAddress, int destinationAddress, 
-			 String option, String data, IP ip) {
-		setVer(ver);
-		setHeaderLength(headerLength);
-		setTypeOfService(typeOfService);
-		setIdentification(identification);
-		setTimeToLive(timeToLive);
-		setProtocol(protocol);
-		setTotalLength(totalLength);
+	public TCP(int sourcePort, int destinationPort , int sequenceNumber, int ackNumber,
+			 int dataOffset, int reserved, int flags,  int window, int checkSum,
+			 int urgentPointer, int options, int padding, 
+			 String data, IP ip) {
+		
+		setSourcePort(sourcePort);
+		setDestinationPort(destinationPort);
+		setSequenceNumber(sequenceNumber);
+		setAckNumber(ackNumber);
+		setDataOffset(dataOffset);
+		setReserved(reserved);
 		setFlags(flags);
-		setOffset(offset);
+		setWindow(window);
 		setCheckSum(checkSum);
-		setSourceAddress(sourceAddress);
-		setDestinationAddress(destinationAddress); 
-		this.option=option;
-		this.data=data;
-		this.ip=ip;
+		this.data = data;
+		
 	}
 
-	public void setVer(int ver) {
-		if(ver <= 15 && ver >= 0)
-			this.ver = ver;
+	
+	
+	public int getSourcePort() {
+		return sourcePort;
 	}
 
-	public void setHeaderLength(int headerLength) {
-		if(headerLength <= 15 && headerLength >= 0)
-			this.headerLength = headerLength;
+
+
+	public void setSourcePort(int sourcePort) {
+		this.sourcePort = sourcePort;
 	}
 
-	public void setTypeOfService(int typeOfService) {
-		if(typeOfService <= 255 && typeOfService >= 0)
-			this.typeOfService = typeOfService;
+
+
+	public int getDestinationPort() {
+		return destinationPort;
 	}
 
-	public void setIdentification(int identification) {
-		if(identification <= 65535 && identification >= 0)
-			this.identification = identification;
+
+
+	public void setDestinationPort(int destinationPort) {
+		this.destinationPort = destinationPort;
 	}
 
-	public void setTimeToLive(int timeToLive) {
-		if(timeToLive <= 255 && timeToLive >= 0)
-			this.timeToLive = timeToLive;
+
+
+	public int getSequenceNumber() {
+		return sequenceNumber;
 	}
 
-	public void setProtocol(int protocol) {
-		if(protocol <= 255 && protocol >= 0)
-			this.protocol = protocol;
+
+
+	public void setSequenceNumber(int sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 	}
 
-	public void setTotalLength(int totalLength) {
-		if(totalLength <= 65535 && totalLength >= 0)
-			this.totalLength = totalLength;
+
+
+	public int getAckNumber() {
+		return ackNumber;
 	}
+
+
+
+	public void setAckNumber(int ackNumber) {
+		this.ackNumber = ackNumber;
+	}
+
+
+
+	public int getDataOffset() {
+		return dataOffset;
+	}
+
+
+
+	public void setDataOffset(int dataOffset) {
+		this.dataOffset = dataOffset;
+	}
+
+
+
+	public int getReserved() {
+		return reserved;
+	}
+
+
+
+	public void setReserved(int reserved) {
+		this.reserved = reserved;
+	}
+
+
+
+	public int getFlags() {
+		return flags;
+	}
+
+
 
 	public void setFlags(int flags) {
-		if(flags <= 7 && flags >= 0)
-			this.flags = flags;
+		this.flags = flags;
 	}
 
-	public void setOffset(int offset) {
-		if(offset <= 8191 && offset >= 0)
-			this.offset = offset;
+
+
+	public int getWindow() {
+		return window;
 	}
+
+
+
+	public void setWindow(int window) {
+		this.window = window;
+	}
+
+
+
+	public int getCheckSum() {
+		return checkSum;
+	}
+
+
 
 	public void setCheckSum(int checkSum) {
-		if(checkSum <= 65535 && checkSum >= 0)
-			this.checkSum = checkSum;
+		this.checkSum = checkSum;
 	}
 
-	public void setSourceAddress(int sourceAddress) {
-		//if(sourceAddress <= 4294967295 && sourceAddress >= 0)
-			this.sourceAddress = sourceAddress;
+
+
+	public int getUrgentPointer() {
+		return urgentPointer;
 	}
 
-	public void setDestinationAddress(int destinationAddress) {
-		//if(destinationAddress <= 4294967295 && destinationAddress >= 0)
-			this.destinationAddress = destinationAddress;
+
+
+	public void setUrgentPointer(int urgentPointer) {
+		this.urgentPointer = urgentPointer;
 	}
-	
+
+
+
+	public int getOptions() {
+		return options;
+	}
+
+
+
+	public void setOptions(int options) {
+		this.options = options;
+	}
+
+
+
+	public int getPadding() {
+		return padding;
+	}
+
+
+
+	public void setPadding(int padding) {
+		this.padding = padding;
+	}
+
+
+
+	public String getData() {
+		return data;
+	}
+
+
+	public IP getIp() {
+		return ip;
+	}
+
+
+
+	public void setIp(IP ip) {
+		this.ip = ip;
+	}
+
+
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public String toString() {
 
 		JSONObject json = new JSONObject();
-		json.put("ver",ver);
-		json.put("headerLength", headerLength);
-		json.put("typeOfService", typeOfService);
-		json.put("identification", identification);
-		json.put("timeToLive", timeToLive);
-		json.put("protocol", protocol);
-		json.put("totalLength", totalLength);
+		json.put("sourcePort",sourcePort);
+		json.put("destinationPort", destinationPort);
+		json.put("sequenceNumber", sequenceNumber);
+		json.put("ackNumber", ackNumber);
+		json.put("dataOffset", dataOffset);
+		json.put("reserved", reserved);
 		json.put("flags", flags);
-		json.put("offset", offset);
+		json.put("window", window);
 		json.put("checkSum", checkSum);
-		json.put("sourceAddress", sourceAddress);
-		json.put("destinationAddress", destinationAddress);
-		json.put("option", option);
+		json.put("urgentPointer", urgentPointer);
+		json.put("options", options);
+		json.put("padding", padding);
 		json.put("data", data);
 		json.put("ip", ip);
 		return json.toJSONString();

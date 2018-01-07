@@ -36,6 +36,30 @@ public class UDP {
 			this.destPort = destPort;
 	}
 
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public int getSourcePort() {
+		return sourcePort;
+	}
+
+	public int getDestPort() {
+		return destPort;
+	}
+
+	public int getUdpLength() {
+		return udpLength;
+	}
+
+	public int getUdpChecksum() {
+		return udpChecksum;
+	}
+
 	public void setUdpLength(int udpLength) {
 		if(udpLength <= 65535 && udpLength >= 0)
 			this.udpLength = udpLength;
