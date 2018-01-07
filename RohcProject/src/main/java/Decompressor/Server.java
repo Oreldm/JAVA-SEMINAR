@@ -17,7 +17,7 @@ public class Server extends Thread {
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
-		serverSocket.setSoTimeout(10000);
+	//	serverSocket.setSoTimeout(100000);
 	}
 
 	public void run() {
@@ -40,7 +40,7 @@ public class Server extends Thread {
 				decompreessedIP=decompressor.decompress(compressedIP);
 				System.out.println("Decompressed: " + decompreessedIP);
 				/**FOR RAVID : HERE WE SHOULD HAVE updateGui()**/
-				
+			
 				//second
 				System.out.println("Second");
 				response = in.readUTF();
