@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 import Compressor.CompressorGui;
+import Layer3.IP;
 
 public class DecompressorGui extends JFrame {
 	
@@ -72,7 +73,6 @@ public class DecompressorGui extends JFrame {
 		p1.add(new JLabel(beforeOption));
 		p1.add(new JLabel("Data received:"));
 		p1.add(new JLabel(beforeData));
-		;// add the data
 		p1.setBorder(new TitledBorder("Before Decompressing"));
 
 		JPanel p2 = new JPanel(new GridLayout(14, 2));
@@ -136,5 +136,39 @@ public class DecompressorGui extends JFrame {
 		}
 		
 		
+	}
+	public void updateGui(IP beforeIp, IP afterIp){
+		
+		beforeVer = String.valueOf(beforeIp.getVer());
+		beforeHeaderLength = String.valueOf(beforeIp.getHeaderLength());
+		beforeTypeOfService = String.valueOf(beforeIp.getTypeOfService());
+		beforeIdentification = String.valueOf(beforeIp.getIdentification());
+		beforeTimeToLive = String.valueOf(beforeIp.getTimeToLive());
+		beforeProtocol = String.valueOf(beforeIp.getProtocol());
+		beforeTotalLength = String.valueOf(beforeIp.getTotalLength());
+		beforeFlags = String.valueOf(beforeIp.getFlags());
+		beforeOffset = String.valueOf(beforeIp.getOffset());
+		beforeCheckSum = String.valueOf(beforeIp.getCheckSum());
+		beforeSourceAddress = String.valueOf(beforeIp.getSourceAddress());
+		beforeDestinationAddress = String.valueOf(beforeIp.getDestinationAddress());
+		beforeOption = String.valueOf(beforeIp.getOption());
+		beforeData = String.valueOf(beforeIp.getData());
+		
+		afterVer = String.valueOf(afterIp.getVer());
+		afterHeaderLength = String.valueOf(afterIp.getHeaderLength());
+		afterTypeOfService = String.valueOf(afterIp.getTypeOfService());
+		afterIdentification = String.valueOf(afterIp.getIdentification());
+		afterTimeToLive = String.valueOf(afterIp.getTimeToLive());
+		afterProtocol = String.valueOf(afterIp.getProtocol());
+		afterTotalLength = String.valueOf(afterIp.getTotalLength());
+		afterFlags = String.valueOf(afterIp.getFlags());
+		afterOffset = String.valueOf(afterIp.getOffset());
+		afterCheckSum = String.valueOf(afterIp.getCheckSum());
+		afterSourceAddress = String.valueOf(afterIp.getSourceAddress());
+		afterDestinationAddress = String.valueOf(afterIp.getDestinationAddress());
+		afterOption = String.valueOf(afterIp.getOption());
+		afterData = String.valueOf(afterIp.getData());
+		
+		repaint();
 	}
 }
