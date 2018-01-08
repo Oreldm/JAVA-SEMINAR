@@ -140,13 +140,21 @@ public class CompressorGui extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Socket client = new Socket(serverName, port);
-					IP ip = new IP(Integer.parseInt(ver.getText()), Integer.parseInt(headerLength.getText()),
-							Integer.parseInt(typeOfService.getText()), Integer.parseInt(identification.getText()),
-							Integer.parseInt(timeToLive.getText()), Integer.parseInt(protocol.getText()),
-							Integer.parseInt(totalLength.getText()), Integer.parseInt(offset.getText()),
-							Integer.parseInt(flags.getText()), Integer.parseInt(checkSum.getText()),
-							Integer.parseInt(sourceAddress.getText()), Integer.parseInt(destinationAddress.getText()),
-							Integer.parseInt(option.getText()), data.getText(), null);
+					IP ip = Utils.getIpObject();
+					try {
+						ip = new IP(Integer.parseInt(ver.getText()), Integer.parseInt(headerLength.getText()),
+								Integer.parseInt(typeOfService.getText()), Integer.parseInt(identification.getText()),
+								Integer.parseInt(timeToLive.getText()), Integer.parseInt(protocol.getText()),
+								Integer.parseInt(totalLength.getText()), Integer.parseInt(offset.getText()),
+								Integer.parseInt(flags.getText()), Integer.parseInt(checkSum.getText()),
+								Integer.parseInt(sourceAddress.getText()),
+								Integer.parseInt(destinationAddress.getText()), Integer.parseInt(option.getText()),
+								data.getText(), null);
+					} catch (Exception e1) {
+						System.err.println("please enter a valid input"); 
+						client.close();
+						return;
+					}
 					IP compressedIP = compressor.compress(ip);
 
 					/** Send Stream **/
@@ -157,14 +165,8 @@ public class CompressorGui extends JFrame {
 					client.close();
 				} catch (UnknownHostException e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				catch (NumberFormatException e1) {
-					// TODO Auto-generated catch block
-					System.err.println("please enter a valid input");
 				}
 			}
 		});
@@ -254,13 +256,21 @@ public class CompressorGui extends JFrame {
 				try {
 					Socket client = new Socket(serverName, port);
 
-					TCP tcp = new TCP(Integer.parseInt(sourcePort.getText()),
-							Integer.parseInt(destinationPort.getText()), Integer.parseInt(sequenceNumber.getText()),
-							Integer.parseInt(ackNumber.getText()), Integer.parseInt(dataOffset.getText()),
-							Integer.parseInt(reserved.getText()), Integer.parseInt(flags.getText()),
-							Integer.parseInt(window.getText()), Integer.parseInt(checkSum.getText()),
-							Integer.parseInt(urgentPointer.getText()), Integer.parseInt(options.getText()),
-							Integer.parseInt(padding.getText()), data.getText(), null);
+					TCP tcp = Utils.getTcpObject();
+					try {
+						tcp = new TCP(Integer.parseInt(sourcePort.getText()),
+								Integer.parseInt(destinationPort.getText()), Integer.parseInt(sequenceNumber.getText()),
+								Integer.parseInt(ackNumber.getText()), Integer.parseInt(dataOffset.getText()),
+								Integer.parseInt(reserved.getText()), Integer.parseInt(flags.getText()),
+								Integer.parseInt(window.getText()), Integer.parseInt(checkSum.getText()),
+								Integer.parseInt(urgentPointer.getText()), Integer.parseInt(options.getText()),
+								Integer.parseInt(padding.getText()), data.getText(), null);
+					}catch (Exception e1) {
+						System.err.println("please enter a valid input"); 
+						client.close();
+						return;
+					}
+					
 					TCP tcpToSend = compressor.compress(tcp);
 
 					/** Send Stream **/
@@ -276,7 +286,7 @@ public class CompressorGui extends JFrame {
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}catch (NumberFormatException e1) {
+				} catch (NumberFormatException e1) {
 					// TODO Auto-generated catch block
 					System.err.println("please enter a valid input");
 				}
@@ -341,16 +351,25 @@ public class CompressorGui extends JFrame {
 				try {
 					Socket client = new Socket(serverName, port);
 
-					UDP udp = new UDP(Integer.parseInt(sourcePort.getText()), Integer.parseInt(destPort.getText()),
+					UDP udp = Utils.getUdpObject();
+					
+					try {
+						udp = new UDP(Integer.parseInt(sourcePort.getText()), Integer.parseInt(destPort.getText()),
 							Integer.parseInt(udpLength.getText()), Integer.parseInt(udpChecksum.getText()),
 							data.getText());
+					}catch (Exception e1) {
+						System.err.println("please enter a valid input"); 
+						client.close();
+						return;
+					}
+					
 					UDP udpToReturn = compressor.compress(udp);
 
 					/** Send Stream **/
 					OutputStream outToServer = client.getOutputStream();
 					DataOutputStream out = new DataOutputStream(outToServer);
 					out.writeUTF(udpToReturn.toString()); // Actual Place to put string
-					
+
 					client.close();
 				} catch (UnknownHostException e1) {
 					// TODO Auto-generated catch block
@@ -358,7 +377,7 @@ public class CompressorGui extends JFrame {
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}catch (NumberFormatException e1) {
+				} catch (NumberFormatException e1) {
 					// TODO Auto-generated catch block
 					System.err.println("please enter a valid input");
 				}
@@ -376,7 +395,6 @@ public class CompressorGui extends JFrame {
 
 	private class TCPButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("in");
 			updateToTcp();
 		}
 	}
@@ -389,7 +407,6 @@ public class CompressorGui extends JFrame {
 
 	private class IPButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("in");
 			updateToIp();
 		}
 	}

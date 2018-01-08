@@ -69,13 +69,9 @@ public class Server extends Thread {
 
 			} catch (SocketTimeoutException s) {
 				System.out.println("Socket timed out!");
-				break;
 			} catch (IOException e) {
-				e.printStackTrace();
-				break;
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 	}
