@@ -7,13 +7,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import Layer3.IP;
+import Layer4.TCP;
+import Layer4.UDP;
+import Utils.Utils;
 
 import java.io.*;
 
 public class Server extends Thread {
 	private ServerSocket serverSocket;
-	public static IP compressedIP;
-	public static IP decompreessedIP;
 
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
@@ -29,7 +30,7 @@ public class Server extends Thread {
 				// System.out.println("Waiting for client on port " +
 				// serverSocket.getLocalPort() + "...");
 				Socket server = serverSocket.accept();
-
+				DecompressorAlgorithm decompressor = new DecompressorAlgorithm();
 				// System.out.println("Just connected to " + server.getRemoteSocketAddress());
 
 				/** Server Recieve **/
@@ -37,28 +38,32 @@ public class Server extends Thread {
 				String response = in.readUTF();
 
 				JSONObject json = (JSONObject) parser.parse(response);
-				compressedIP = new IP(json);
-				System.out.println("WE GOT FROM CLIENT COMPRESSED : " + compressedIP.toString());
-				DecompressorAlgorithm decompressor = new DecompressorAlgorithm();
-				decompreessedIP = decompressor.decompress(compressedIP);
-				System.out.println("Decompressed: " + decompreessedIP);
-				/** FOR RAVID : HERE WE SHOULD HAVE updateGui() **/
-				DecompressorGui.frame.updateGui(compressedIP, decompreessedIP);
-				DecompressorGui.frame.repaint();
-				//				// second
-//				System.out.println("Second");
-//				response = in.readUTF();
-//				json = (JSONObject) parser.parse(response);
-//				compressedIP = new IP(json);
-//				System.out.println("WE GOT FROM CLIENT COMPRESSED : " + compressedIP.toString());
-//				decompreessedIP = decompressor.decompress(compressedIP);
-//				System.out.println("Decompressed: " + decompreessedIP);
-
+				
+				
+				if(Utils.isIp(json)) {
+					IP compressedIP;
+					IP decompreessedIP;
+					compressedIP = new IP(json);
+					decompreessedIP = decompressor.decompress(compressedIP);
+					DecompressorGui.frame.updateGui(compressedIP, decompreessedIP);
+				} else if (Utils.isTcp(json)) {
+					TCP compressedTcp;
+					TCP decompreessedTcp;
+					compressedTcp = new TCP(json);
+					decompreessedTcp = decompressor.decompress(compressedTcp);
+					DecompressorGui.frame.updateGui(compressedTcp, decompreessedTcp);
+				} else if (Utils.isUdp(json)) {
+					UDP compressedUdp;
+					UDP decompreessedUdp;
+					compressedUdp = new UDP(json);
+					decompreessedUdp = decompressor.decompress(compressedUdp);
+					DecompressorGui.frame.updateGui(compressedUdp, decompreessedUdp);
+				}
 				/** Server Answer **/
 				// DataOutputStream out = new DataOutputStream(server.getOutputStream());
 				// out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
 				// + "\nGoodbye!");
-
+				DecompressorGui.frame.repaint();
 				server.close();
 
 			} catch (SocketTimeoutException s) {

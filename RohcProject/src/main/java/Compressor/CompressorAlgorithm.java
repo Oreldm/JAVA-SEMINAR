@@ -1,26 +1,44 @@
 package Compressor;
 
 import Layer3.IP;
+import Layer4.TCP;
+import Layer4.UDP;
 
 public class CompressorAlgorithm {
-	// str.getBytes();
-	public static IP lastPacket = null;
-	
+	public static IP lastPacketIP = null;
+	public static TCP lastPacketTCP = null;
+	public static UDP lastPacketUDP = null;
 	
 	public IP compress(IP ip) {
-		if(lastPacket == null) {
-			lastPacket=ip;
+		if(lastPacketIP == null) {
+			lastPacketIP=ip;
 			return ip; //IR State
 		}
-		//IF RTP/SomethingDynamic Do Second Order (means to add sequence number!)
-		/**TODO: ADD SecondOrder**/
-		
-		
-		//else:
-		/**First Order**/
-		 IP packetToReturn=lastPacket.getDifferences(ip);
+		 IP packetToReturn=lastPacketIP.getDifferences(ip);
 		 packetToReturn.setData(ip.getData());
-		 lastPacket=ip;
+		 lastPacketIP=ip;
+		 return packetToReturn;
+	}
+	
+	public TCP compress(TCP tcp) {
+		if(lastPacketTCP == null) {
+			lastPacketTCP=tcp;
+			return tcp; //IR State
+		}
+		 TCP packetToReturn=lastPacketTCP.getDifferences(tcp);
+		 packetToReturn.setData(tcp.getData());
+		 lastPacketTCP=tcp;
+		 return packetToReturn;
+	}
+	
+	public UDP compress(UDP udp) {
+		if(lastPacketUDP == null) {
+			lastPacketUDP=udp;
+			return udp; //IR State
+		}
+		 UDP packetToReturn=lastPacketUDP.getDifferences(udp);
+		 packetToReturn.setData(udp.getData());
+		 lastPacketUDP=udp;
 		 return packetToReturn;
 	}
 	

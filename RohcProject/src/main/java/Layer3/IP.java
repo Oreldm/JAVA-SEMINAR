@@ -1,12 +1,14 @@
 package Layer3;
 
 import Layer2.EthernetFrame;
+import Utils.Network;
 import Utils.Utils;
 
 import java.io.UnsupportedEncodingException;
 
 import org.json.simple.JSONObject;
-public class IP {
+
+public class IP extends Network {
 
 	
 //	private int[] ver=new int[4];
@@ -111,11 +113,9 @@ public class IP {
 		return identification;
 	}
 
-
 	public void setIdentification(int identification) {
 		this.identification = identification;
 	}
-
 
 	public int getTimeToLive() {
 		return timeToLive;
@@ -125,7 +125,6 @@ public class IP {
 	public void setTimeToLive(int timeToLive) {
 		this.timeToLive = timeToLive;
 	}
-
 
 	public int getProtocol() {
 		return protocol;
@@ -139,7 +138,6 @@ public class IP {
 	public int getFlags() {
 		return flags;
 	}
-
 
 	public void setFlags(int flags) {
 		this.flags = flags;
@@ -185,11 +183,9 @@ public class IP {
 		this.ethernet = ethernet;
 	}
 
-
 	public void setTotalLength(int totalLength) {
 		this.totalLength = totalLength;
 	}
-
 
 	public void setCheckSum(int checkSum) {
 		this.checkSum = checkSum;
@@ -238,24 +234,8 @@ public class IP {
 	}
 	
 	public IP getDifferences(IP other) {
-//		private int ver;
-//		private int headerLength;
-//		private int typeOfService;
-//		private int identification;
-//		private int timeToLive;
-//		private int protocol;
-//		private int totalLength;
-//		private int flags;
-//		private int offset;
-//		private int checkSum;
-//		private int sourceAddress;
-//		private int destinationAddress;
-//		private String option;
-//		private String data;
-//		EthernetFrame ethernet;
 		if(other==null)
 			return null;
-		
 		
 		IP ipToReturn = Utils.getIpObject();
 		//XOR the difference

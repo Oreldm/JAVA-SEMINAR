@@ -53,8 +53,6 @@ public class DecompressorGui extends JFrame {
 	
 	
 	public DecompressorGui() {
-		//check
-		
 		p1.add(versionP1);
 		p1.add(headerLengthP1);
 		p1.add(typeOfServiceP1);
@@ -118,6 +116,7 @@ public class DecompressorGui extends JFrame {
 	}
 	
 	public void updateGui(UDP beforeUDP, UDP afterUDP){
+		cleanGui();
 		versionP1			.setText("Source Port: "+beforeUDP.getSourcePort());
 		headerLengthP1		.setText("Destination Port: " + beforeUDP.getDestPort());
 		typeOfServiceP1		.setText("Lenght: " + beforeUDP.getUdpLength());
@@ -138,6 +137,7 @@ public class DecompressorGui extends JFrame {
 	}
 	
 	public void updateGui(TCP beforeTCP, TCP afterTCP){
+		cleanGui();
 		versionP1			.setText("Source Port: "+beforeTCP.getSourcePort());
 		headerLengthP1		.setText("Destination Port: " + beforeTCP.getDestinationPort());
 		typeOfServiceP1		.setText("Sequence Number: " + beforeTCP.getSequenceNumber());
@@ -173,6 +173,7 @@ public class DecompressorGui extends JFrame {
 	}
 	
 	public void updateGui(IP beforeIp, IP afterIp){
+		cleanGui();
 		versionP1			.setText("Ver: "+beforeIp.getVer());
 		headerLengthP1		.setText("Header Length: " + beforeIp.getHeaderLength());
 		typeOfServiceP1		.setText("Type Of Service: " + beforeIp.getTypeOfService());
@@ -203,6 +204,44 @@ public class DecompressorGui extends JFrame {
 		destinationAddressP2.setText("Destination Address: " + afterIp.getDestinationAddress());
 		optionP2			.setText("Option: " + afterIp.getOption());
 		dataP2				.setText("Data Received: " + afterIp.getData());
+		
+		p1.repaint();
+		p2.repaint();
+		p3.repaint();
+		this.repaint();
+	}
+	
+	public void cleanGui(){
+		versionP1			.setText("");
+		headerLengthP1		.setText("");
+		typeOfServiceP1		.setText("");
+		identificationP1	.setText("");
+		timeToLiveP1		.setText("");
+		protocolP1			.setText("");
+		totalLengthP1		.setText("");
+		flagsP1				.setText("");
+		offsetP1			.setText("");
+		checkSumP1			.setText("");
+		sourceAddressP1		.setText("");
+		destinationAddressP1.setText("");
+		optionP1			.setText("");
+		dataP1				.setText("");
+		
+		
+		versionP2			.setText("");
+		headerLengthP2		.setText("");
+		typeOfServiceP2		.setText("");
+		identificationP2	.setText("");
+		timeToLiveP2		.setText("");
+		protocolP2			.setText("");
+		totalLengthP2		.setText("");
+		flagsP2				.setText("");
+		offsetP2			.setText("");
+		checkSumP2			.setText("");
+		sourceAddressP2		.setText("");
+		destinationAddressP2.setText("");
+		optionP2			.setText("");
+		dataP2				.setText("");
 		
 		p1.repaint();
 		p2.repaint();
