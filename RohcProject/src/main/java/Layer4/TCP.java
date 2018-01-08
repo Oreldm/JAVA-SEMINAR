@@ -221,6 +221,7 @@ public class TCP extends Network {
 		tcpToReturn.setOptions(this.getOptions() ^ other.getOptions());
 		tcpToReturn.setPadding(this.getPadding() ^ other.getPadding());
 		tcpToReturn.setData(other.data);
+		tcpToReturn.setIp(other.getIp());
 		
 		return tcpToReturn;
 		

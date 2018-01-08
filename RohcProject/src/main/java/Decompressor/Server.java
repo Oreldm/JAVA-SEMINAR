@@ -38,7 +38,8 @@ public class Server extends Thread {
 				String response = in.readUTF();
 
 				JSONObject json = (JSONObject) parser.parse(response);
-				
+				System.out.println("JSON FROM SERVER: " );
+				System.out.println(json);
 				
 				if(Utils.isIp(json)) {
 					IP compressedIP;
