@@ -162,6 +162,10 @@ public class CompressorGui extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					System.err.println("please enter a valid input");
+				}
 			}
 		});
 
@@ -272,6 +276,9 @@ public class CompressorGui extends JFrame {
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				}catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					System.err.println("please enter a valid input");
 				}
 			}
 		});
@@ -351,6 +358,9 @@ public class CompressorGui extends JFrame {
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				}catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					System.err.println("please enter a valid input");
 				}
 			}
 		});

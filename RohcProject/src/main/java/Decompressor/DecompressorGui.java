@@ -101,7 +101,7 @@ public class DecompressorGui extends JFrame {
 	public static void main(String[] args) {
 		frame.pack();
 		frame.setTitle("Decompressor");
-		frame.setSize(500, 400);
+		frame.setSize(600, 400);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setAlwaysOnTop(true);
@@ -237,6 +237,9 @@ public class DecompressorGui extends JFrame {
 		int after=afterUDP.getDestPort()+afterUDP.getSourcePort()+afterUDP.getUdpChecksum()+
 				afterUDP.getUdpLength();
 		
+		if(before>after) //for first time
+			return before-after;
+		
 		return after-before;
 	}
 	
@@ -250,6 +253,10 @@ public class DecompressorGui extends JFrame {
 				afterIP.getHeaderLength()+afterIP.getIdentification()+afterIP.getOffset()+afterIP.getOption()+
 				afterIP.getProtocol()+afterIP.getSourceAddress()+afterIP.getSourceAddress()+afterIP.getTimeToLive()+
 				afterIP.getTotalLength()+beforeIP.getVer();
+		
+		if(before>after) //for first time
+			return before-after;
+		
 		return after-before;
 	}
 	
@@ -263,6 +270,9 @@ public class DecompressorGui extends JFrame {
 				afterTCP.getDestinationPort()+afterTCP.getFlags()+afterTCP.getOptions()+
 				afterTCP.getPadding()+afterTCP.getReserved()+afterTCP.getSequenceNumber()+
 				afterTCP.getSourcePort()+afterTCP.getUrgentPointer()+afterTCP.getWindow();
+		
+		if(before>after) //for first time
+			return before-after;
 		
 		return after-before;
 	}
