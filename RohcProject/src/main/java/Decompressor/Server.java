@@ -19,7 +19,6 @@ public class Server extends Thread {
 	public Server(int port) throws IOException {
 		serverSocket = new ServerSocket(port);
 
-		// serverSocket.setSoTimeout(10000);
 
 	}
 
@@ -27,20 +26,15 @@ public class Server extends Thread {
 		while (true) {
 			try {
 				JSONParser parser = new JSONParser();
-				// System.out.println("Waiting for client on port " +
-				// serverSocket.getLocalPort() + "...");
 				Socket server = serverSocket.accept();
 				DecompressorAlgorithm decompressor = new DecompressorAlgorithm();
-				// System.out.println("Just connected to " + server.getRemoteSocketAddress());
 
 				/** Server Recieve **/
 				DataInputStream in = new DataInputStream(server.getInputStream()); // stream in
 				String response = in.readUTF();
 
 				JSONObject json = (JSONObject) parser.parse(response);
-				System.out.println("JSON FROM SERVER: " );
-				System.out.println(json);
-				
+
 				if(Utils.isIp(json)) {
 					IP compressedIP;
 					IP decompreessedIP;
@@ -61,9 +55,6 @@ public class Server extends Thread {
 					DecompressorGui.frame.updateGui(compressedUdp, decompreessedUdp);
 				}
 				/** Server Answer **/
-				// DataOutputStream out = new DataOutputStream(server.getOutputStream());
-				// out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
-				// + "\nGoodbye!");
 				DecompressorGui.frame.repaint();
 				server.close();
 
@@ -71,7 +62,6 @@ public class Server extends Thread {
 				System.out.println("Socket timed out!");
 			} catch (IOException e) {
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 			}
 		}
 	}

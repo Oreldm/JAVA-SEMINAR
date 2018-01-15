@@ -22,9 +22,6 @@ public class CompressorGui extends JFrame {
 	private JTextField data = new JTextField();
 	private Font font = new Font("Californian FB", Font.BOLD, 15);
 
-	private String ipString;
-	private String dataString;
-
 	private String serverName = "localhost";
 	private int port = 6000;
 	private CompressorAlgorithm compressor = new CompressorAlgorithm();
@@ -276,7 +273,6 @@ public class CompressorGui extends JFrame {
 					/** Send Stream **/
 					OutputStream outToServer = client.getOutputStream();
 					DataOutputStream out = new DataOutputStream(outToServer);
-					System.out.println(tcpToSend.toString());
 					out.writeUTF(tcpToSend.toString());
 
 					client.close();
@@ -413,56 +409,6 @@ public class CompressorGui extends JFrame {
 
 	static int counter = 0;
 
-	private class ButtonListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			// String ipString = ipAdress.getText();
-			String dataString = data.getText();
-			try {
-				Socket client = new Socket(serverName, port);
-				// System.out.println("Just connected to " + client.getRemoteSocketAddress());
-				// OutputStream outToServer = client.getOutputStream();
-
-				if (counter < 2) {
-					IP ip = new IP(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, "asdsadsadsa", null);
-					IP a = compressor.compress(ip);
-
-					/** Send Stream **/
-					OutputStream outToServer = client.getOutputStream();
-					DataOutputStream out = new DataOutputStream(outToServer);
-					out.writeUTF(a.toString()); // Actual Place to put string
-					counter++;
-				} else if (counter < 4) {
-					TCP tcp = Utils.getTcpObject();
-					TCP a = compressor.compress(tcp);
-
-					/** Send Stream **/
-					OutputStream outToServer = client.getOutputStream();
-					DataOutputStream out = new DataOutputStream(outToServer);
-					out.writeUTF(a.toString()); // Actual Place to put string
-
-					counter++;
-				} else {
-					UDP udp = Utils.getUdpObject();
-					UDP a = compressor.compress(udp);
-
-					/** Send Stream **/
-					OutputStream outToServer = client.getOutputStream();
-					DataOutputStream out = new DataOutputStream(outToServer);
-					out.writeUTF(a.toString()); // Actual Place to put string
-				}
-
-				/** Recieve from Server **/
-				// InputStream inFromServer = client.getInputStream();
-				// DataInputStream in = new DataInputStream(inFromServer);
-				// System.out.println("Server says " + in.readUTF());
-
-				client.close();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-		}
-	}
 
 	public static void main(String[] args) {
 		CompressorGui frame = new CompressorGui();

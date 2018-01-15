@@ -10,19 +10,6 @@ import org.json.simple.JSONObject;
 
 public class IP extends Network {
 
-	
-//	private int[] ver=new int[4];
-//	private int[] headerLength=new int[4];
-//	private int[] typeOfService=new int[8];
-//	private int[] identification=new int[16];
-//	private int[] timeToLive=new int[8];
-//	private int[] protocol=new int[8];
-//	private int[] totalLength=new int[16];
-//	private int[] flags=new int[3];
-//	private int[] offset=new int[13];
-//	private int[] checkSum=new int[16];
-//	private int[] sourceAddress=new int[32];
-//	private int[] destinationAddress=new int[32];
 	private int ver;
 	private int headerLength;
 	private int typeOfService;
@@ -312,6 +299,8 @@ public class IP extends Network {
 		json.put("destinationAddress", destinationAddress);
 		json.put("option", option);
 		json.put("data", data);
+		
+		System.out.println(json.toJSONString());
 		return json.toJSONString();
 	}
 }

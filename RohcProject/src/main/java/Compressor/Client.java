@@ -13,12 +13,7 @@ public class Client {
 		String serverName = "localhost";
 		int port = 6000;
 		try {
-			// System.out.println("Connecting to " + serverName + " on port " + port);
 			Socket client = new Socket(serverName, port);
-
-			// System.out.println("Just connected to " + client.getRemoteSocketAddress());
-			// OutputStream outToServer = client.getOutputStream();
-
 			IP ip = new IP(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, "asdsadsadsa", null);
 			CompressorAlgorithm compressor= new CompressorAlgorithm();
 			IP a = compressor.compress(ip);
@@ -45,9 +40,6 @@ public class Client {
 			
 
 			/** Recieve from Server **/
-			// InputStream inFromServer = client.getInputStream();
-			// DataInputStream in = new DataInputStream(inFromServer);
-			// System.out.println("Server says " + in.readUTF());
 			client.close();
 		} catch (IOException e) {
 			e.printStackTrace();
