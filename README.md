@@ -4,7 +4,7 @@ This project Simulate &amp; Visualise Robust Header Compression (ROHC) using Jav
 
 This project is under the MIT License
 
-Copyright (c) 2018 Orel Damari
+Copyright (c) 2018 Orel Damari & Ravid Anbary
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
